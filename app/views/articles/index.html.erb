@@ -1,0 +1,53 @@
+<div class="">
+  <div class="text-center">
+    <h1 class="font-bold text-4xl">Articles</h1>
+    <%= link_to "Create Article", new_article_path, class: 'link-primary' %>
+  </div>
+  <section class="pt-10 lg:pt-[50px] pb-10 lg:pb-5 bg-[#F3F4F6]">
+   <div >
+      <div class="flex flex-wrap -mx-4">
+      <% @articles.each do |article| %>
+         <div class="w-full md:w-1/2 xl:w-1/3 px-4">
+            <div class="bg-white rounded-lg overflow-hidden mb-10">
+               <%= image_tag article.image, class: 'w-full', style: 'height: 370px' rescue image_tag 'https://i.vimeocdn.com/portrait/1274237_300x300.jpg', class: 'w-full',style: 'height: 370px' %>
+               <div class="p-8 sm:p-9 md:p-7 xl:p-9 text-center">
+                  <h3 class="
+                        truncate
+                        font-semibold
+                        text-dark text-xl
+                        sm:text-[22px]
+                        md:text-xl
+                        lg:text-[22px]
+                        xl:text-xl
+                        2xl:text-[22px]
+                        mb-4
+                        block
+                        hover:text-primary
+                        ">
+                        
+                        
+                     <%= article.title %>
+                    
+                  </h3>
+                  
+                  <%= link_to "View Article", article, class: "
+                     inline-block
+                     py-2
+                     px-7
+                     border border-[#E5E7EB]
+                     rounded-full
+                     text-base text-body-color
+                     font-medium
+                     hover:border-primary hover:bg-primary hover:text-gray-300
+                     transition
+                     
+                     " %>
+               </div>
+            </div>
+         </div>
+      <% end %>
+      </div>
+       
+   </div>
+</section>
+</div>
